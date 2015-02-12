@@ -1,17 +1,19 @@
 $fn = 50;
 
 //add ~0.5mm factor to hole diameters for 3d printing
-r_motor = (0.4+20)/2; //radius of circular part
-flat_part = (0.4+15)/2; //center to flat line distance
-r_nail = (2.37+.5)/2; //original, 3.4mm
-
+r_motor = (19.8)/2; //radius of circular part
+flat_part = (14.8)/2; //center to flat line distance
+r_dowel = (4.8)/2; //original, 3.4mm
+r_nail = (2.4)/2;
+wirehole = 1.7;
 border = 2;
-thickness = 3; //How thick you want the linear extrude of this part
+
 //NOTE THIS SEEMS GOOD, PRINT A GOOD PAIR AND TEST
-gear_distance = 1.5+36-2.44/2-1.98/2;
+gear_distance1 = 30.5;
+gear_distance2 = 35.5;
 padding = 14; //controls how much material you want on the bottom (under motor) needs to be adjusted so it is flat bottom at padding=0
 
-rect1 = gear_distance + r_nail + border;
+rect1 = gear_distance1+gear_distance2 + r_nail + border;
 
 module motorshape () {
 	intersection() {
@@ -29,25 +31,24 @@ module motorshapeborder () {
 
 module innerholes () {
 	motorshape();
-	translate([gear_distance,0,0]) {circle(r_nail);}
-	translate([-5,-11,0]) {circle(2);}
-	translate([5,-11,0]) {circle(2);}
+	translate([gear_distance1,0,0]) {circle(r_dowel);}
+	translate([-5,-11,0]) {circle(wirehole);}
+	translate([5,-11,0]) {circle(wirehole);}
+	translate([gear_distance2+gear_distance1,0,0]) { circle(r_nail); }
 }
 
-module mainbody() {
-	linear_extrude(height=thickness) {
+
 		difference() {
 			hull() {
 				union () {
 					motorshapeborder();
-					translate([gear_distance,0,0]) { circle(r_nail+border); }
+					translate([gear_distance1+gear_distance2,0,0]) { circle(r_nail+border); }
+
 					polygon([[-(r_motor+border),-padding],[-(r_motor+border),0],[rect1,0],[rect1,-padding]]);
 				}
 			}
 			innerholes();	
 		}
-	}
-}
+	
 
 
-mainbody();
