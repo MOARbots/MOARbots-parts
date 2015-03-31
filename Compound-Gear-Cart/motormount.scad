@@ -9,8 +9,8 @@ wirehole = 1.7;
 border = 2;
 
 //NOTE THIS SEEMS GOOD, PRINT A GOOD PAIR AND TEST
-gear_distance1 = 30.5;
-gear_distance2 = 35.5;
+gear_distance1 = 30.35;
+gear_distance2 = 35.25;
 padding = 14; //controls how much material you want on the bottom (under motor) needs to be adjusted so it is flat bottom at padding=0
 
 rect1 = gear_distance1+gear_distance2 + r_nail + border;
