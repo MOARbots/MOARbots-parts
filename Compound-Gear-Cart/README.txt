@@ -1,5 +1,7 @@
 Compound Gear Cart
 See the photo "Example.JPG" to view an example of this cart assembled.
+See the photo "motorassembly.jpg" to see how the motor/gears/wheel fit together.
+See the photo "parts.jpg" to see a visual list of the parts.
 
 This work is licensed under the Creative Commons Attribution 4.0 International License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
