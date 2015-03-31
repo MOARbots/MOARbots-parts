@@ -1,3 +1,13 @@
+/*
+ * Parametric ball caster by Sliptonic.
+ * http://www.thingiverse.com/thing:13782
+ * Released under the Creative Commons Attribution 3.0 License
+ * http://creativecommons.org/licenses/by/3.0/legalcode
+ * For the Compound Gear cart, match the BallSize to the diameter of
+ * the ball bearing or marble you have available.
+ * TotalHeight has been computed according to other elements of the cart.
+ */
+
 WallThickness = 2;
 BallSize = 15.9;
 Airgap = .5;
